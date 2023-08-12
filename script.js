@@ -11,14 +11,20 @@ button.addEventListener('mouseup', () => {
   button.style.transform = 'scale(1)';
 });
 
-const count = async () => {
+const count = async (hit = false) => {
+  const url = `https://api.countapi.xyz/${hit ? 'hit' : 'get'}/shiorium.github.io/visits`;
 
+  const res = await fetch(url)
+    .then(response => response.json())
+    .catch(error => console.error('Error fetching count JSON:', error));
+
+    console.log(res);
 };
 
 (async () => {
   const filenames = await fetch('manifest.json')
     .then(response => response.json())
-    .catch(error => console.error('Error fetching JSON:', error));
+    .catch(error => console.error('Error fetching manifest JSON:', error));
 
   console.log(filenames);
 
