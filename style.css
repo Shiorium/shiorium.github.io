@@ -15,7 +15,7 @@ html, body {
 }
 
 .main-content{
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -23,7 +23,7 @@ html, body {
   display: flex;
   flex-direction: column; /* Stack content vertically */
   align-items: center; /* Center content horizontally */
-  padding: 20px;
+  padding: 5px;
 }
 
 .the-button {
