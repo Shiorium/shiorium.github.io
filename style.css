@@ -23,20 +23,22 @@ html, body {
   flex-direction: column; /* Stack content vertically */
   align-items: center; /* Center content horizontally */
   padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .the-button {
   border: none;
-  background-color: transparent;
-  cursor: pointer;
-  width: 100px;
-  height: 100px;
-  background-image: url("shiori_heart_1.png");
-  background-size: cover;
-  transition: transform 0.3s ease-in-out;
+  background-color: #222;
 }
 
-.the-button:hover {
-  transform: scale(1.1);
-  background-image: url("shiori_heart_2.png");
+.the-button:not(:hover) .image {
+  opacity: 0.3;
 }
+
+.the-button:hover .image {
+  opacity: 1;
+}
+
+div.image::before {
+  content:url(shiori_heart_1.png);
+};
