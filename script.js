@@ -23,7 +23,6 @@ button.addEventListener("mouseup", () => {
     button.style.transform = "scale(1.01)";
     const sound = filenames[0];
     const audio = new Audio(`sounds/${sound}`);
-    audio.play;
-    console.log(`play ${sound}`)
+    audio.play();
   });
 })();
