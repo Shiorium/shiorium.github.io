@@ -27,7 +27,7 @@ html, body {
 
 .the-button {
   border: none;
-  background-color: #222;
+  background-color: transparent;
 }
 
 .image {
@@ -41,7 +41,32 @@ html, body {
 .the-button:hover .image {
   opacity: 1;
 } */
-
+/* 
 div.image::before {
   content:url(shiori_heart_1.png);
-};
+}; */
+
+.image {
+  width: 100px;
+  height: 100px;
+  background-image: url('shiori_heart_1.png');
+  background-size: cover;
+  mask: url('#image-mask');
+}
+
+/* Add this after the previous CSS rules */
+svg {
+  display: none;
+}
+
+svg defs {
+  mask: url('#image-mask');
+}
+
+svg rect {
+  fill: white;
+}
+
+.mask {
+  mask: url('#image-mask');
+}
