@@ -26,8 +26,6 @@ const count = async (hit = false) => {
     .then(response => response.json())
     .catch(error => console.error('Error fetching manifest JSON:', error));
 
-  console.log(filenames);
-
   button.addEventListener('mousedown', async () => {
     button.style.transform = 'scale(1.01)';
     const sound = filenames[random(0, filenames.length - 1)];
