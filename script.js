@@ -1,0 +1,6 @@
+let localCount = 0;
+let savedCount = parseInt(localStorage.localCount || JSON.stringify(0));
+let latest = JSON.parse(localStorage.latest || JSON.stringify([]));
+
+const rand = (lower, upper) => Math.floor(Math.random() * (upper - lower)) + lower;
+
