@@ -33,7 +33,7 @@ html, body {
   border: none;
 }
 
-.the-button:hot(:hover) .image {
+.the-button:not(:hover) .image {
   opacity: 0.7;
 }
 
