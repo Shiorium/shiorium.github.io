@@ -17,7 +17,6 @@ button.addEventListener("mouseup", () => {
 fetch('manifest.json')
   .then(response => response.json())
   .then(data => {
-    console.log(data.name); // Outputs: John
-    console.log(data.age);  // Outputs: 30
+    console.log(data); // Outputs: John
   })
   .catch(error => console.error('Error fetching JSON:', error));
