@@ -1,6 +1,5 @@
-let localCount = 0;
-let savedCount = parseInt(localStorage.localCount || JSON.stringify(0));
-let latest = JSON.parse(localStorage.latest || JSON.stringify([]));
+let sessionCount = 0;
+let totalCount = parseInt(localStorage.sessionCount || JSON.stringify(0));
 
 const random = (lower, upper) => Math.floor(Math.random() * (upper - lower)) + lower;
 const randomSoundClip = (list) => list[random(0, list.length)];
@@ -11,14 +10,14 @@ button.addEventListener('mouseup', () => {
   button.style.transform = 'scale(1)';
 });
 
-const count = async (hit = false) => {
-  const url = `https://api.countapi.xyz/${hit ? 'hit' : 'get'}/shiorium.github.io/visits`;
+const count = async () => {
+  sessionCount += 1;
+  totalCount += 1;
 
-  const res = await fetch(url)
-    .then(response => response.json())
-    .catch(error => console.error('Error fetching count JSON:', error));
+  localStorage.sessionCount = totalCount + '';
 
-  return res;
+  document.getElementById('sessionCount').innerText = sessionCount;
+  document.getElementById('totalCount').innerText = totalCount;
 };
 
 (async () => {
@@ -32,7 +31,6 @@ const count = async (hit = false) => {
     const audio = new Audio(`sounds/${sound}`);
     audio.play();
 
-    const globalCount = await count();
-    console.log(globalCount);
+    count();
   });
 })();
