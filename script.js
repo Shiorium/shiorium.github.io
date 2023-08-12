@@ -7,11 +7,9 @@ const rand = (lower, upper) => Math.floor(Math.random() * (upper - lower)) + low
 const button = document.querySelector(".the-button");
 
 button.addEventListener("mousedown", () => {
-  button.style.transform = "scale(1.1)";
-  console.log("down")
+  button.style.transform = "scale(1.01)";
 });
 
 button.addEventListener("mouseup", () => {
   button.style.transform = "scale(1)";
-  console.log("up")
 });
