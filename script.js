@@ -14,9 +14,8 @@ button.addEventListener("mouseup", () => {
   button.style.transform = "scale(1)";
 });
 
-fetch('manifest.json')
+const filenames = await fetch('manifest.json')
   .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
   .catch(error => console.error('Error fetching JSON:', error));
+
+console.log(filenames);
