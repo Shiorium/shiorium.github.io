@@ -38,8 +38,12 @@ html, body {
   opacity: 0.3;
 }
 
-.the-button:hover .image {
+.the-button:active .image {
   opacity: 1;
+}
+
+.the-button:hover .image {
+  opacity: 0.7;
 }
 
 div.image::before {
