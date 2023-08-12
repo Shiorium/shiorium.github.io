@@ -2,20 +2,27 @@ let localCount = 0;
 let savedCount = parseInt(localStorage.localCount || JSON.stringify(0));
 let latest = JSON.parse(localStorage.latest || JSON.stringify([]));
 
-const rand = (lower, upper) => Math.floor(Math.random() * (upper - lower)) + lower;
+const random = (lower, upper) => Math.floor(Math.random() * (upper - lower)) + lower;
+const randomSoundClip = (list) => list[random(0, list.length)];
 
 const button = document.querySelector(".the-button");
 
-button.addEventListener("mousedown", () => {
-  button.style.transform = "scale(1.01)";
-});
 
 button.addEventListener("mouseup", () => {
   button.style.transform = "scale(1)";
 });
 
-const filenames = await fetch('manifest.json')
-  .then(response => response.json())
-  .catch(error => console.error('Error fetching JSON:', error));
+(async () => {
+  const filenames = await fetch('manifest.json')
+    .then(response => response.json())
+    .catch(error => console.error('Error fetching JSON:', error));
 
-console.log(filenames);
+  console.log(filenames);
+
+  button.addEventListener("mousedown", () => {
+    button.style.transform = "scale(1.01)";
+    const sound = filenames[0];
+    const audio = new Audio(`sounds/${sound}`);
+    audio.play;
+  });
+})();
