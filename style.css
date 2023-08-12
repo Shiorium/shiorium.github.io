@@ -29,7 +29,9 @@ html, body {
 .the-button {
   border: none;
   background-color: #222;
-  
+}
+
+.image {
   width: 300px;
   height: 300px;
 }
