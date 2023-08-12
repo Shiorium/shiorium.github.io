@@ -31,6 +31,10 @@ html, body {
   background-color: #222;
 }
 
+.image {
+  border: none;
+}
+
 .the-button:not(:hover) .image {
   opacity: 0.3;
 }
@@ -40,6 +44,5 @@ html, body {
 }
 
 div.image::before {
-  border: none;
   content:url(shiori_heart_1.png);
 };
