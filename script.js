@@ -21,7 +21,7 @@ button.addEventListener("mouseup", () => {
 
   button.addEventListener("mousedown", () => {
     button.style.transform = "scale(1.01)";
-    const sound = filenames[0];
+    const sound = filenames[random(0, filenames.length - 1)];
     const audio = new Audio(`sounds/${sound}`);
     audio.play();
   });
