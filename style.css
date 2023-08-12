@@ -29,6 +29,9 @@ html, body {
 .the-button {
   border: none;
   background-color: #222;
+  
+  width: 300px;
+  height: 300px;
 }
 
 .the-button:not(:hover) .image {
