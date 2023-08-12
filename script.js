@@ -2,6 +2,10 @@ let sessionCount = 0;
 let totalCount = parseInt(localStorage.sessionCount || JSON.stringify(0));
 let highest = parseInt(localStorage.highest || JSON.stringify(0));
 
+document.getElementById('sessionCount').innerText = sessionCount + '';
+document.getElementById('totalCount').innerText = totalCount + '';
+document.getElementById('highest').innerText = highest + '';
+
 const random = (lower, upper) => Math.floor(Math.random() * (upper - lower)) + lower;
 const randomSoundClip = (list) => list[random(0, list.length)];
 
