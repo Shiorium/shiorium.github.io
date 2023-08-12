@@ -34,13 +34,13 @@ html, body {
   border: none;
 }
 
-.the-button:not(:hover) .image {
+/* .the-button:not(:hover) .image {
   opacity: 0.3;
 }
 
 .the-button:hover .image {
   opacity: 1;
-}
+} */
 
 div.image::before {
   content:url(shiori_heart_1.png);
