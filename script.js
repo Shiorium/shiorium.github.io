@@ -18,7 +18,7 @@ const count = async (hit = false) => {
     .then(response => response.json())
     .catch(error => console.error('Error fetching count JSON:', error));
 
-    console.log(res);
+  return res;
 };
 
 (async () => {
@@ -31,5 +31,8 @@ const count = async (hit = false) => {
     const sound = filenames[random(0, filenames.length - 1)];
     const audio = new Audio(`sounds/${sound}`);
     audio.play();
+
+    const globalCount = await count();
+    console.log(globalCount);
   });
 })();
