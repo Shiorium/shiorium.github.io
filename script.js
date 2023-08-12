@@ -24,5 +24,6 @@ button.addEventListener("mouseup", () => {
     const sound = filenames[0];
     const audio = new Audio(`sounds/${sound}`);
     audio.play;
+    console.log(`play ${sound}`)
   });
 })();
