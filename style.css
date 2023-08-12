@@ -28,45 +28,15 @@ html, body {
 .the-button {
   border: none;
   background-color: transparent;
-}
-
-.image {
-  border: none;
-}
-
-/* .the-button:not(:hover) .image {
-  opacity: 0.3;
-}
-
-.the-button:hover .image {
-  opacity: 1;
-} */
-/* 
-div.image::before {
-  content:url(shiori_heart_1.png);
-}; */
-
-.image {
+  cursor: pointer;
   width: 100px;
   height: 100px;
-  background-image: url('shiori_heart_1.png');
+  background-image: url("shiori_heart_1.png");
   background-size: cover;
-  mask: url('#image-mask');
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Add this after the previous CSS rules */
-svg {
-  display: none;
-}
-
-svg defs {
-  mask: url('#image-mask');
-}
-
-svg rect {
-  fill: white;
-}
-
-.mask {
-  mask: url('#image-mask');
+.the-button:hover {
+  transform: scale(1.1);
+  background-image: url("shiori_heart_2.png");
 }
