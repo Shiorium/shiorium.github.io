@@ -8,21 +8,16 @@ const button = document.querySelector(".the-button");
 
 button.addEventListener("mousedown", () => {
   button.style.transform = "scale(1.01)";
-
-  const url = "https://github.com/Shiorium/shiorium.github.io/tree-commit-info/main/sounds";
-
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", url, true);
-
-  xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 304)) {
-          console.log(xhr.JSON);
-      }
-  };
-
-  xhr.send();
 });
 
 button.addEventListener("mouseup", () => {
   button.style.transform = "scale(1)";
 });
+
+fetch('manifest.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data.name); // Outputs: John
+    console.log(data.age);  // Outputs: 30
+  })
+  .catch(error => console.error('Error fetching JSON:', error));
