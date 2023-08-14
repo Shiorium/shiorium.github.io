@@ -30,9 +30,8 @@ html, body {
 .the-button {
   border: none;
   background-color: transparent;
-  max-width: 100vw; /* Image will never exceed viewport width */
-  width: 100%; /* Make the button width match the container width */
-  height: auto; /* Height scales proportionally based on width */
+  width: 512px;
+  height: 512px;
   background-image: url(shiori_heart_1.png);
   background-size: contain;
   background-repeat: no-repeat;
