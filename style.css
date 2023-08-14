@@ -66,3 +66,11 @@ html, body {
     background-repeat: no-repeat;
   }
 }
+
+a:link {
+  color: #87ceeb;
+}
+
+a:visited {
+  color: #c8a2c8;
+}
