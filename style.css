@@ -47,7 +47,7 @@ html, body {
   min-height: 50px; /* Minimum height for the button */
   max-width: 100vw; /* Maximum width for the button (viewport width) */
   max-height: 100vh; /* Maximum height for the button (viewport height) */
-  width: 50%; /* Initial width for the button */
+  width: 100%; /* Initial width for the button */
   height: auto; /* Height scales proportionally based on width */
 }
 
