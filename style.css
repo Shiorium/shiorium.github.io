@@ -27,7 +27,6 @@ html, body {
   justify-content: center;
   align-items: center;
   max-width: 100vw; /* Ensure the container never exceeds viewport width */
-  position: relative; /* Position relative for absolute positioning of button */
 }
 
 .center {
@@ -40,11 +39,8 @@ html, body {
 .the-button {
   border: none;
   background-color: transparent;
-  position: absolute; /* Position button absolutely within the container */
-  top: 0;
-  left: 0;
-  width: 100%; /* Button width matches container width */
-  height: 100%; /* Button height matches container height */
+  width: 512px;
+  height: 512px;
   background-image: url(shiori_heart_1.png);
   background-size: contain;
   background-repeat: no-repeat;
