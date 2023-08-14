@@ -9,6 +9,7 @@ html, body {
 .center, footer {
   max-width: 100vw; /* Ensure the container never exceeds viewport width */
 }
+
 .container {
   margin: 0;
   padding: 0;
