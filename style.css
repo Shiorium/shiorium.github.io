@@ -3,6 +3,7 @@ html, body {
   color: white;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1em;
+  overflow-x: hidden;
 }
 
 .container {
