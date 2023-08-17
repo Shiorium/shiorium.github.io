@@ -72,6 +72,31 @@ const count = async () => {
     }
   })
     .then(response => response.json())
+    .then(data => data.count)
     .catch(error => console.error('Error fetching count JSON:', error));
-  document.getElementById('globalCount').innerText = (globalCount.count || 0) + '';
+  
+  const existingGlobalCount = parseInt(document.getElementById('globalCount').innerText || JSON.stringify(0));
+
+  if (existingGlobalCount < globalCount) {
+    document.getElementById('globalCount').innerText = (globalCount || 0) + '';
+  }
 })();
+
+setInterval(() => {
+  fetch(countEndpoint, {
+    method: 'GET',
+    headers: {
+      'Origin': 'https://shiorium.github.io',
+    }
+  })
+    .then(response => response.json())
+    .then(data => data.count)
+    .then(globalCount => {
+      const existingGlobalCount = parseInt(document.getElementById('globalCount').innerText || JSON.stringify(0));
+  
+      if (existingGlobalCount < globalCount) {
+        document.getElementById('globalCount').innerText = (globalCount || 0) + '';
+      }
+    })
+    .catch(error => console.error('Error fetching count JSON:', error));
+}, 5000);
