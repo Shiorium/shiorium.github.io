@@ -72,4 +72,5 @@ const count = async () => {
   globalRecord.push(globalCount.count);
   localStorage.globalRecord = JSON.stringify(globalRecord);
   document.getElementById('globalCount').innerText = (globalCount.count || 0) + '';
+  document.getElementById('globalRecord').innerHTML = globalRecord.map((x) => `<li>${x}</li>`);
 })();
