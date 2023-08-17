@@ -1,3 +1,5 @@
+const countEndpoint = 'http://localhost:3000/count';
+
 let sessionCount = 0;
 let totalCount = parseInt(localStorage.sessionCount || JSON.stringify(0));
 let highest = parseInt(localStorage.highest || JSON.stringify(0));
@@ -44,4 +46,10 @@ const count = async () => {
 
     count();
   });
+
+  const globalCount = await fetch(countEndpoint)
+    .then(response => response.json())
+    .catch(error => console.error('Error fetching count JSON:', error));
+
+  console.log({globalCount});
 })();
