@@ -47,7 +47,12 @@ const count = async () => {
     count();
   });
 
-  const globalCount = await fetch(countEndpoint)
+  const globalCount = await fetch(countEndpoint, {
+    method: 'GET',
+    headers: {
+      'Origin': 'https://shiorium.github.io',
+    }
+  })
     .then(response => response.json())
     .catch(error => console.error('Error fetching count JSON:', error));
 
