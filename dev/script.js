@@ -45,6 +45,7 @@ const count = async () => {
     .catch(error => console.error('Error fetching count JSON:', error));
 
   globalRecord.push(globalCount.count);
+  localStorage.globalRecord = JSON.stringify(globalRecord);
   
   document.getElementById('globalCount').innerText = globalCount.count;
   document.getElementById('globalRecord').innerHTML = globalRecord.map((x) => `<li>${x}</li>`).join('');
@@ -72,6 +73,5 @@ const count = async () => {
   })
     .then(response => response.json())
     .catch(error => console.error('Error fetching count JSON:', error));
-  localStorage.globalRecord = JSON.stringify(globalRecord);
   document.getElementById('globalCount').innerText = (globalCount.count || 0) + '';
 })();
