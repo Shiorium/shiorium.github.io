@@ -8,7 +8,7 @@ let globalRecord = JSON.parse(localStorage.globalRecord || JSON.stringify([]));
 document.getElementById('sessionCount').innerText = sessionCount + '';
 document.getElementById('totalCount').innerText = totalCount + '';
 document.getElementById('highest').innerText = highest + '';
-document.getElementById('globalRecord').innerHTML = globalRecord.map((x) => `<li>${x}</li>`);
+document.getElementById('globalRecord').innerHTML = globalRecord.map((x) => `<li>${x}</li>`).join('');
 
 const random = (lower, upper) => Math.floor(Math.random() * (upper - lower)) + lower;
 const randomSoundClip = (list) => list[random(0, list.length)];
@@ -72,5 +72,5 @@ const count = async () => {
   globalRecord.push(globalCount.count);
   localStorage.globalRecord = JSON.stringify(globalRecord);
   document.getElementById('globalCount').innerText = (globalCount.count || 0) + '';
-  document.getElementById('globalRecord').innerHTML = globalRecord.map((x) => `<li>${x}</li>`);
+  document.getElementById('globalRecord').innerHTML = globalRecord.map((x) => `<li>${x}</li>`).join('');
 })();
