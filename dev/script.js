@@ -3,10 +3,12 @@ const countEndpoint = 'https://api.shiorium.com:3000/count';
 let sessionCount = 0;
 let totalCount = parseInt(localStorage.sessionCount || JSON.stringify(0));
 let highest = parseInt(localStorage.highest || JSON.stringify(0));
+let globalRecord = JSON.parse(localStorage.globalRecord || JSON.stringify([]));
 
 document.getElementById('sessionCount').innerText = sessionCount + '';
 document.getElementById('totalCount').innerText = totalCount + '';
 document.getElementById('highest').innerText = highest + '';
+document.getElementById('globalRecord').innerHTML = globalRecord.map((x) => `<li>${x}</li>`);
 
 const random = (lower, upper) => Math.floor(Math.random() * (upper - lower)) + lower;
 const randomSoundClip = (list) => list[random(0, list.length)];
@@ -67,6 +69,7 @@ const count = async () => {
   })
     .then(response => response.json())
     .catch(error => console.error('Error fetching count JSON:', error));
-
+  globalRecord.push(globalCount.count);
+  localStorage.globalRecord = JSON.stringify(globalRecord);
   document.getElementById('globalCount').innerText = (globalCount.count || 0) + '';
 })();
