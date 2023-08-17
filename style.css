@@ -74,3 +74,9 @@ a:link {
 a:visited {
   color: #c8a2c8;
 }
+
+#globalRecord {
+  overflow: auto;
+  width: 100px;
+  height: 200px;
+}
