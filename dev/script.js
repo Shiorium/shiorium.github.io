@@ -1,4 +1,4 @@
-const countEndpoint = 'http://localhost:3000/count';
+const countEndpoint = 'http://35.167.76.218:3000/count';
 
 let sessionCount = 0;
 let totalCount = parseInt(localStorage.sessionCount || JSON.stringify(0));
