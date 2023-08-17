@@ -56,5 +56,5 @@ const count = async () => {
     .then(response => response.json())
     .catch(error => console.error('Error fetching count JSON:', error));
 
-  console.log({globalCount});
+    document.getElementById('globalCount').innerText = globalCount.count + '';
 })();
