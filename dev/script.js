@@ -31,6 +31,18 @@ const count = async () => {
     localStorage.highest = localStorage.sessionCount;
     document.getElementById('highest').innerText = sessionCount;
   }
+
+  const globalCount = await fetch(countEndpoint, {
+    method: 'POST',
+    headers: {
+      'Origin': 'https://shiorium.github.io',
+      'Content-Type': 'application/json',
+    }
+  })
+    .then(response => response.json())
+    .catch(error => console.error('Error fetching count JSON:', error));
+
+  document.getElementById('globalCount').innerText = globalCount;
 };
 
 (async () => {
