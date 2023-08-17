@@ -1,4 +1,4 @@
-const countEndpoint = 'http://54.148.211.132:3000/count';
+const countEndpoint = 'https://api.shiorium.com:3000/count';
 
 let sessionCount = 0;
 let totalCount = parseInt(localStorage.sessionCount || JSON.stringify(0));
