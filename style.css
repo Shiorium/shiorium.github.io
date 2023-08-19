@@ -90,3 +90,7 @@ a:visited {
 #global, #local {
   padding: 10px;
 }
+
+footer {
+  padding: 25px;
+}
