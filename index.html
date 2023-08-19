@@ -42,14 +42,22 @@
               <button class="the-button" type="button"></button>
             </div>
 
-            <h2>Global: <span id="globalCount"></span></h2>
-            <p>This session: <span id="sessionCount"></span></p>
-            <p>Highest in one session: <span id="highest"></span></p>
-            <p>Total: <span id="totalCount"></span></p>
+            <div id="numbers">
+              <div id="global">
+                <h3>Global</h3>
+                <br/>
+                <h2 id="globalCount"></h2>
+                <div>
+                  <h3>Personal Global Record:</h3>
+                  <ul id="globalRecord"></ul>
+                </div>
+              </div>
 
-            <div>
-              <h3>Personal Global Record:</h3>
-              <ul id="globalRecord"></ul>
+              <div id="local">
+                <p>This session: <span id="sessionCount"></span></p>
+                <p>Highest in one session: <span id="highest"></span></p>
+                <p>Total: <span id="totalCount"></span></p>
+              </div>
             </div>
           </div>
         </div>
