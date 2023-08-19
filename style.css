@@ -82,14 +82,12 @@ a:visited {
 }
 
 #numbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
-#global {
-  float: left;
-  margin-right: 15px;
-}
-
-#local {
-  float: right;
-}
+/* #global, #local {
+  padding: 10px;
+} */
