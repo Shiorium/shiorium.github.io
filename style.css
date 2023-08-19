@@ -95,6 +95,11 @@ footer {
   padding: 25px;
 }
 
+#local h6 {
+  float: left;
+}
+
+
 #local h4 {
   float: right;
 }
