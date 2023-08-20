@@ -102,3 +102,7 @@ footer {
 #local .count {
   float: right;
 }
+
+.personalCountRow {
+  width: 100%;
+}
