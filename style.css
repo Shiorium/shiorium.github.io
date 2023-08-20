@@ -105,9 +105,10 @@ footer {
 
 .personalCountRow {
   width: 100%;
-  height: auto;
+  overflow: hidden; /* Hide overflow if needed */
+  display: inline-block; /* Use inline-block to match content height */
 }
 
-.title, .count {
-  padding: 10px;
+.title {
+  padding-right: 15px;
 }
