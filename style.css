@@ -105,6 +105,7 @@ footer {
 
 .personalCountRow {
   width: 100%;
+  height: auto;
 }
 
 .title, .count {
