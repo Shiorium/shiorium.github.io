@@ -87,6 +87,7 @@ a:visited {
 
 #global {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
