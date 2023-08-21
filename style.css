@@ -82,7 +82,10 @@ a:visited {
 }
 
 #numbers {
-  /* display: flex; */
+  justify-content: center;
+}
+
+#global {
   justify-content: center;
 }
 
