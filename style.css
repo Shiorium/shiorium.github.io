@@ -85,7 +85,7 @@ a:visited {
   justify-content: center;
 }
 
-#global {
+#global, #global > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
