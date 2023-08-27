@@ -8,7 +8,7 @@ fs.readdir(directoryPath, (err, files) => {
     return;
   }
 
-  const manifest = files;
+  const manifest = files.filter((x) => !x.endsWith('.Identifier'));
   const manifestJSON = JSON.stringify(manifest, null, 2);
 
   fs.writeFile('manifest.json', manifestJSON, err => {
