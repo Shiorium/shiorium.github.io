@@ -1,6 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 
 const directoryPath = './sounds';
+const identifierExtension = '.Identifier';
 
 fs.readdir(directoryPath, (err, files) => {
   if (err) {
@@ -8,7 +10,7 @@ fs.readdir(directoryPath, (err, files) => {
     return;
   }
 
-  const manifest = files.filter((x) => !x.endsWith('.Identifier'));
+  const manifest = files.filter((x) => !x.endsWith(identifierExtension));
   const manifestJSON = JSON.stringify(manifest, null, 2);
 
   fs.writeFile('manifest.json', manifestJSON, err => {
@@ -19,13 +21,16 @@ fs.readdir(directoryPath, (err, files) => {
     console.log('Manifest file generated successfully.');
   });
 
-  const identifiers = files.filter((x) => x.endsWith('.Identifier'));
+  const identifiers = files.filter((x) => x.endsWith(identifierExtension));
 
+  let filesDeleted = 0;
+  let filesToDelete = 0;
+  
   identifiers.forEach(file => {
     const filePath = path.join(directoryPath, file);
 
     // Check if the file has the target extension
-    if (path.extname(filePath) === targetExtension) {
+    if (path.extname(filePath) === identifierExtension) {
       filesToDelete++;
 
       fs.unlink(filePath, err => {
